@@ -120,32 +120,6 @@ class DataAnalyzer(MaldiDataModule):
         self.save_results(extra=extra)
     
         return
-    
-    # def transfer_learning(self, callbacks):
-    #     # Extract x and y from the test data loader
-    #     X, y = self.test_dataloader().dataset[:]
-
-    #     self.metadata_train, self.train_dataset = MaldiDataset(X, self.metadata_test[2], "train", self.params)
-    #     self.metadata_val, self.val_dataset = MaldiDataset(X, self.metadata_test[2], "val", self.params)
-    #     self.metadata_test, self.test_dataset = MaldiDataset(X, self.metadata_test[2], "test", self.params)
-
-    #     # Create the data loaders
-    #     self.
-
-    #     # Train the model using the new train, val and test datasets
-    #     model = MALDI_1D_CNN.load_from_checkpoint(self.params["best_model_path"], backbone=backboneModel, classes = self.params["num_classes"], params=self.params)
-    #     self.setup("fit")
-    #     trainer = pl.Trainer(
-    #         max_epochs=self.params["epochs"], 
-    #         default_root_dir="./", 
-    #         callbacks=callbacks)
-
-    #     trainer.fit(model = model, datamodule=self)
-                
-    #     self.best_transfer_model_path = trainer.checkpoint_callback.best_model_path
-    #     self.params["best_transfer_model_path"] = self.best_transfer_model_path
-    #     self.save_config()
-    #     self.evaluate(transfer_eval = self.test_dataloader())
 
     def map_target_to_name(self, target):
         if self.params["problem"] == "species":
